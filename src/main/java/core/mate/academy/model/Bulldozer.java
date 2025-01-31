@@ -15,10 +15,7 @@ public class Bulldozer extends Machine implements MachineProducer<Bulldozer> {
     }
 
     @Override
-    public List<? super Machine> get() {
-        Bulldozer bulldozer1 = new Bulldozer();
-        Bulldozer bulldozer2 = new Bulldozer();
-        Bulldozer bulldozer3 = new Bulldozer();
-        return List.of(bulldozer1, bulldozer2, bulldozer3);
+    public List<Bulldozer> get() {
+        return List.of(new Bulldozer(), new Bulldozer(), new Bulldozer());
     }
 }

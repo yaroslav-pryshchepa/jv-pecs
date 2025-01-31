@@ -15,10 +15,7 @@ public class Truck extends Machine implements MachineProducer<Truck> {
     }
 
     @Override
-    public List<? super Machine> get() {
-        Truck truck1 = new Truck();
-        Truck truck2 = new Truck();
-        Truck truck3 = new Truck();
-        return List.of(truck1, truck2, truck3);
+    public List<Truck> get() {
+        return List.of(new Truck(), new Truck(), new Truck());
     }
 }

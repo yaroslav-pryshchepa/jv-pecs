@@ -4,20 +4,26 @@ import core.mate.academy.model.Bulldozer;
 import core.mate.academy.model.Excavator;
 import core.mate.academy.model.Machine;
 import core.mate.academy.model.Truck;
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MachineServiceImpl implements MachineService<Machine> {
     @Override
     public List<Machine> getAll(Class<? extends Machine> type) {
         if (type.equals(Bulldozer.class)) {
-            return (List<Machine>) new Bulldozer().get();
+            Bulldozer bulldozer = new Bulldozer();
+            List<? extends Machine> machines = bulldozer.get();
+            return new ArrayList<>(machines);
         } else if (type.equals(Excavator.class)) {
-            return (List<Machine>) new Excavator().get();
+            Excavator excavator = new Excavator();
+            List<? extends Machine> machines = excavator.get();
+            return new ArrayList<>(machines);
         } else if (type.equals(Truck.class)) {
-            return (List<Machine>) new Truck().get();
+            Truck truck = new Truck();
+            List<? extends Machine> machines = truck.get();
+            return new ArrayList<>(machines);
         } else {
-            return new LinkedList<>();
+            return new ArrayList<>();
         }
     }
 

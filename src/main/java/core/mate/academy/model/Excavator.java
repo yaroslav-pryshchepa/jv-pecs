@@ -15,10 +15,7 @@ public class Excavator extends Machine implements MachineProducer<Excavator> {
     }
 
     @Override
-    public List<? super Machine> get() {
-        Excavator excavator1 = new Excavator();
-        Excavator excavator2 = new Excavator();
-        Excavator excavator3 = new Excavator();
-        return List.of(excavator1, excavator2, excavator3);
+    public List<Excavator> get() {
+        return List.of(new Excavator(), new Excavator(), new Excavator());
     }
 }
